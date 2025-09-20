@@ -1,6 +1,52 @@
 /* Form status message styling */
 #form-status {
   margin-top: 10px;
+  padding: 0.75em 1.25em;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 2.5em;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+#form-status.success {
+  background: #e6f9ed;
+  color: #218838;
+  border: 1.5px solid #34c759;
+  box-shadow: 0 2px 8px 0 rgba(52,199,89,0.08);
+  position: relative;
+  animation: fadeInScale 0.5s cubic-bezier(.4,2,.6,1) 1;
+}
+
+#form-status.success::before {
+  content: '\2714'; /* checkmark */
+  color: #34c759;
+  font-size: 1.3em;
+  margin-right: 0.5em;
+}
+
+#form-status.error {
+  background: #fff0f0;
+  color: #c0392b;
+  border: 1.5px solid #e57373;
+  box-shadow: 0 2px 8px 0 rgba(231,76,60,0.08);
+  position: relative;
+  animation: fadeInScale 0.5s cubic-bezier(.4,2,.6,1) 1;
+}
+
+#form-status.error::before {
+  content: '\26A0'; /* warning sign */
+  color: #e57373;
+  font-size: 1.3em;
+  margin-right: 0.5em;
+}
+
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
 }
 /* Project list styles moved from inline */
 .project-list {

@@ -314,9 +314,15 @@
     const viewCvBtn = document.getElementById('view-cv-btn');
     if (viewCvBtn) {
       viewCvBtn.addEventListener('click', () => {
-        alert('CV download functionality would be implemented here');
-        // In a real implementation, you would link to a PDF file
-        // window.open('/path/to/cv.pdf', '_blank');
+        // Download CV from Google Drive
+        const link = document.createElement('a');
+        link.href = 'https://drive.google.com/uc?export=download&id=1L46mMbeFxdOF2icDGmPXdpKBuWATZ2e6';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.download = 'CV 2025.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       });
     }
 
