@@ -16,6 +16,15 @@ app.use((req, res, next) => {
   next();
 });
 
+  // Set EJS as the view engine
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'views'));
+
+  // Route for root URL
+  app.get('/', (req, res) => {
+    res.render('index');
+  });
+
 app.get('/config', (req, res) => {
   res.json({ API_URL: `http://localhost:${PORT}` });
 });
