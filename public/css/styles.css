@@ -305,6 +305,8 @@
 .project-show-more:active {
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(2, 112, 192, 0.25);
+}
+
 .site-card[hidden] {
   display: none;
 }
